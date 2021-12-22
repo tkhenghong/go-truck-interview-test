@@ -32,7 +32,8 @@ public class QuestionController {
 
     // Question 1
     // Generate a random number of digits in the range [1, 10] with uniform distribution (close)
-    //
+    // Used R programming language to test the API of Question 1.
+    // Link: https://1drv.ms/v/s!AnXuw_71Guq1gTFkkuULPBAZlRR1?e=1XMhx7
     @GetMapping("question1")
     public DigitRandomGeneratorResponse generateRandomValue() {
         return DigitRandomGeneratorResponse.builder().number(digitRandomGenerator.generateDigit()).build();
