@@ -5,3 +5,4 @@
 * Answers are in QuestionController.java.
 * Some models are created to help answer the questions.
 * Not all questions solutions are fully implemented (e.g. Business logic).
+* Related to https://github.com/tkhenghong/gotruck-interview-test
