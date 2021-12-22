@@ -30,11 +30,7 @@ public class QuestionController {
         this.userService = userService;
     }
 
-    @GetMapping("")
-    public String test() {
-        return "Hi";
-    }
-
+    // Question 1
     // Generate a random number of digits in the range [1, 10] with uniform distribution (close)
     @GetMapping("question1")
     public DigitRandomGeneratorResponse generateRandomValue() {
@@ -48,17 +44,14 @@ public class QuestionController {
         PurchaseOrder order = purchaseOrderDAO.getPurchaseOrder(orderID); // Assume it will always a non-null object
 
         // *** Question 2: Describe the checks to be performed here. If any check fails, return false. ***
-        // *** Question 3: Tag the severity of the check as low, medium, or high. explain why you tag it as so. ***
-
-        // TODO: Implement the following logic,
         // Assumption: The following logic is done in the business layer.
         // 1. User status MUST be Active
-        if (requestUser.getUserStatus() != UserStatus.Active) {
+        if (!requestUser.getUserStatus().equals(UserStatus.Active)) {
             return false;
         }
 
         // 2. Order status MUST be New
-        if (order.getOrderStatus() != PurchaseOrderStatus.New) {
+        if (!order.getOrderStatus().equals(PurchaseOrderStatus.New)) {
             return false;
         }
 
@@ -70,4 +63,21 @@ public class QuestionController {
         purchaseOrderDAO.cancelPurchaseOrder(orderID);
         return true;
     }
+
+    // *** Question 3: Tag the severity of the check as low, medium, or high. explain why you tag it as so. ***
+    // Question 3: Answers
+    // Check 1: User status MUST be Active
+    // Severity: Low
+    // Explanation: Suspended/Deleted users should not be able to cancel the orders.
+    // This is considered as low severity because the user must be logged in and only active users are able to log in.
+
+    // Check 2: Order status MUST be New
+    // Severity: Medium
+    // Explanation: As stated in the question, the user is only allowed to cancel his purchase orders if his/her purchase order is still New.
+    // If the order is not new, it could affect the merchants has they either already received the payment/shipped the item out.
+
+    // Check 3: PurchaseOrder's user must be the same as the request user
+    // Severity: High
+    // Explanation: The user can only cancel the orders that they made/own.
+    // This is considered as high severity because if this is not checked, other users can cancel the orders anonymously.
 }
