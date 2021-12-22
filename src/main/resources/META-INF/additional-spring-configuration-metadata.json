@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "digit.random.generator.mean",
+      "type": "java.lang.String",
+      "description": "Configure random generator mean"
+    },
+    {
+      "name": "digit.random.generator.standard.deviation",
+      "type": "java.lang.String",
+      "description": "Configure random generator standard deviation."
+    }
+  ]
+}
