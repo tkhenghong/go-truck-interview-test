@@ -4,4 +4,4 @@
 * Question: https://drive.google.com/file/d/18PuUsxmGh2fOXs3bcvorhn0T9j-rBxZa/view?usp=sharing
 * Answers are in QuestionController.java.
 * Some models are created to help answer the questions.
-* Not all questions are fully implemented.
+* Not all questions solutions are fully implemented (e.g. Business logic).
