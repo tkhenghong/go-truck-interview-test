@@ -9,6 +9,9 @@ public class UserImpl implements User {
 
     private UserStatus userStatus;
 
+    public UserImpl() {
+    }
+
     public UserImpl(String userID, String userName, UserStatus userStatus) {
         this.userID = userID;
         this.userName = userName;

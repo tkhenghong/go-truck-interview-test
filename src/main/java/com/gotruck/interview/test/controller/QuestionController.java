@@ -32,6 +32,7 @@ public class QuestionController {
 
     // Question 1
     // Generate a random number of digits in the range [1, 10] with uniform distribution (close)
+    //
     @GetMapping("question1")
     public DigitRandomGeneratorResponse generateRandomValue() {
         return DigitRandomGeneratorResponse.builder().number(digitRandomGenerator.generateDigit()).build();
