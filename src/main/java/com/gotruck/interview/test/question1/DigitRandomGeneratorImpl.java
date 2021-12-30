@@ -30,7 +30,7 @@ public class DigitRandomGeneratorImpl implements DigitRandomGenerator {
 
     @Override
     public int generateDigit() {
-        int randomDigit = random.nextInt((10 - 0) + 1) + 0;
+        int randomDigit = random.nextInt((9 - 0) + 1) + 0;
         logger.info("randomDigit: " + randomDigit);
         return randomDigit;
     }
